@@ -24,6 +24,8 @@ RUN usermod -aG apache sshuser
 RUN mv /etc/opt/rh/rh-php71/php-fpm.d/www.conf /etc/opt/rh/rh-php71/php-fpm.d/www.conf.bak
 COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9000_www.yourdomain.com.conf.bak
 COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9000_www.yourdomain.com.conf
+COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdomain.com.conf.bak
+COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdomain.com.conf
 
 
 EXPOSE 80 443 22
