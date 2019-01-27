@@ -8,7 +8,7 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN yum -y --enablerepo=extras install epel-release centos-release-scl
 RUN yum -y install wget nginx
-RUN yum -y install httpd; systemctl enable httpd.service
+RUN yum -y install httpd
 RUN yum -y install scl-utils
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
@@ -27,5 +27,15 @@ EXPOSE 80 443 22
 RUN yum -y install vim-enhanced
 RUN echo "export HISTSIZE=20000" >> /etc/bashrc
 RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
+
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+COPY mkdir.sh /tmp/mkdir.sh
+COPY rsync.sh /tmp/rsync.sh
+COPY mkdir_chown_chmod.sh /root/mkdir_chown_chmod.sh
+
+
+RUN sh /tmp/mkdir.sh
+RUN sh /tmp/rsync.sh
+RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl disable sshd;
 
 CMD ["/usr/sbin/init"]
