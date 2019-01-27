@@ -3,21 +3,22 @@ FROM centos/systemd
 MAINTAINER "Your Name" <you@example.com>
 
 RUN sed -i 's/tsflags/\#tsflags/g' /etc/yum.conf
+RUN echo "ip_resolve=4" >> /etc/yum.conf
 RUN yum -y install man-pages man-db man
 
-RUN echo "ip_resolve=4" >> /etc/yum.conf
+RUN echo "export HISTSIZE=20000" >> /etc/bashrc
+RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
+
+
 RUN rm -rf /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN yum -y --enablerepo=extras install epel-release centos-release-scl
-RUN yum -y install wget nginx
-RUN yum -y install httpd mod_ssl
 RUN yum -y install scl-utils
+RUN yum -y install wget nginx vim-enhanced rsync httpd mod_ssl
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
 
-#RUN yum clean all
-RUN yum makecache fast
 
 RUN useradd sshuser
 RUN usermod -aG apache sshuser
@@ -28,10 +29,6 @@ COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdom
 COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdomain.com.conf
 
 
-EXPOSE 80 443 22
-RUN yum -y install vim-enhanced rsync
-RUN echo "export HISTSIZE=20000" >> /etc/bashrc
-RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
 
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 COPY mkdir.sh /tmp/mkdir.sh
@@ -42,5 +39,10 @@ COPY mkdir_chown_chmod.sh /root/mkdir_chown_chmod.sh
 RUN sh /tmp/mkdir.sh
 RUN sh /tmp/rsync.sh
 RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm
+
+#RUN yum clean all
+RUN yum makecache fast
+
+EXPOSE 80 443 22
 
 CMD ["/usr/sbin/init"]
