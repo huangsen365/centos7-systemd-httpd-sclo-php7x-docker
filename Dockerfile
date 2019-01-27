@@ -57,6 +57,8 @@ zlib-devel
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
 RUN yum -y install rh-php71-php*
+RUN yum -y install sclo-php71-php* --exclude=sclo-php71-php-pecl-redis --exclude=sclo-php71-php-smbclient
+
 
 
 RUN useradd sshuser
