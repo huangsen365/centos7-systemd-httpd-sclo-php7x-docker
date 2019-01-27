@@ -2,6 +2,9 @@ FROM centos/systemd
 
 MAINTAINER "Your Name" <you@example.com>
 
+RUN sed -i 's/tsflags/\#tsflags/g' /etc/yum.conf
+RUN yum -y install man-pages man-db man
+
 RUN echo "ip_resolve=4" >> /etc/yum.conf
 RUN rm -rf /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
@@ -36,6 +39,6 @@ COPY mkdir_chown_chmod.sh /root/mkdir_chown_chmod.sh
 
 RUN sh /tmp/mkdir.sh
 RUN sh /tmp/rsync.sh
-RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl disable sshd;
+RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm
 
 CMD ["/usr/sbin/init"]
