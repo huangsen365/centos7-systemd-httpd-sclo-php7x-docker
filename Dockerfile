@@ -24,5 +24,6 @@ COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm
 
 
 EXPOSE 80 443 22
+RUN yum -y install vim-enhanced
 
 CMD ["/usr/sbin/init"]
