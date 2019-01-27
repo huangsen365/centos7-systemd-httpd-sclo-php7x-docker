@@ -15,7 +15,45 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN yum -y --enablerepo=extras install epel-release centos-release-scl
 RUN yum -y install scl-utils
-RUN yum -y install wget nginx vim-enhanced rsync httpd mod_ssl
+RUN yum -y install bzip2 \
+htop \
+httpd \
+iftop \
+logrotate \
+mariadb-server \
+mod_ssl \
+mysql \
+nginx \
+openssh-clients \
+openssh-server \
+php \
+php-fpm \
+php-gd \
+php-imap \
+php-mbstring \
+php-mcrypt \
+php-mysql \
+php-odbc \
+php-pear \
+php-pecl-geoip \
+php-pecl-memcached \
+php-pecl-redis \
+php-pgsql \
+php-snmp \
+php-xml \
+php-xmlrpc \
+redis \
+rsync \
+subversion \
+telnet \
+tmux \
+unar \
+unzip \
+vim-enhanced \
+wget \
+zip \
+zlib-devel
+
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
 
