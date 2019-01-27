@@ -24,7 +24,7 @@ COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm
 
 
 EXPOSE 80 443 22
-RUN yum -y install vim-enhanced
+RUN yum -y install vim-enhanced rsync
 RUN echo "export HISTSIZE=20000" >> /etc/bashrc
 RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
 
