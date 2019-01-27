@@ -56,6 +56,7 @@ zlib-devel
 
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
+RUN yum -y install rh-php71-php*
 
 
 RUN useradd sshuser
