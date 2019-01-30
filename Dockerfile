@@ -79,7 +79,7 @@ COPY mkdir_chown_chmod.sh /root/mkdir_chown_chmod.sh
 
 RUN sh /tmp/mkdir.sh
 RUN sh /tmp/rsync.sh
-RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm
+RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl enable sshd
 
 #RUN yum clean all
 RUN yum makecache fast
