@@ -13,6 +13,7 @@ RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
 RUN rm -rf /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
+RUN yum makecache fast
 RUN yum -y --enablerepo=extras install epel-release centos-release-scl
 RUN yum -y install scl-utils
 RUN yum -y install bzip2 \
@@ -82,7 +83,6 @@ RUN sh /tmp/rsync.sh
 RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl enable sshd
 
 #RUN yum clean all
-RUN yum makecache fast
 
 #RUN /bin/sh /root/mkdir_chown_chmod.sh
 
