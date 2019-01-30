@@ -14,7 +14,6 @@ docker run -d \
   -v $current_dir/volumes/volume_yourdomain.com/var/opt:/var/opt \
   -p 80:80 \
   -p 443:443 \
-  -p 2222:22 \
   --restart always \
   --name centos7-systemd-httpd-sclo-php7x-docker_yourdomain.com \
   centos7-systemd-httpd-sclo-php7x

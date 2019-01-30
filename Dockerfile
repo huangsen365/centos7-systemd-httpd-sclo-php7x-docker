@@ -84,6 +84,6 @@ RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl
 #RUN yum clean all
 RUN yum makecache fast
 
-EXPOSE 80 443 22
+EXPOSE 80 443
 
 CMD ["/usr/sbin/init"]
