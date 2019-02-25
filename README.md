@@ -3,8 +3,13 @@ centos7 systemd httpd sclo php7x docker
 
 # yum install below rpms
 nfs-utils
-unzip zip
+htop
+iftop
+tmux
+unzip
+zip
 epel-release
+telnet
 mariadb(mysql)
 
 # Get Docker CE for CentOS
