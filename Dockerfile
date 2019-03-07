@@ -17,6 +17,7 @@ RUN yum makecache fast
 RUN yum -y --enablerepo=extras install epel-release centos-release-scl
 RUN yum -y install scl-utils
 RUN yum -y install bzip2 \
+cronie \
 git \
 htop \
 httpd \
