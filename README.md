@@ -20,7 +20,7 @@ NAS_SERVER_PATH:/ /root/data1     nfs4    _netdev,auto    0       0
 # mount it
 mount -a
 # wget and install docker-ce
-https://github.com/huangsen365/install_docker
+wget https://github.com/huangsen365/install_docker/archive/master.zip -O /root/data1/install_docker.zip
 # wget
 wget https://github.com/huangsen365/centos7-systemd-httpd-sclo-php7x-docker/archive/master.zip -O /root/data1/centos7-systemd-httpd-sclo-php7x-docker.zip
 
