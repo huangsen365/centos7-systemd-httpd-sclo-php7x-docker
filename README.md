@@ -11,6 +11,8 @@ zip
 epel-release
 telnet
 mariadb(mysql)
+
+yum -y install nfs-utils htop iftop tmux unzip zip epel-release telnet mariadb
 # wget and install docker-ce
 https://github.com/huangsen365/install_docker
 # wget
