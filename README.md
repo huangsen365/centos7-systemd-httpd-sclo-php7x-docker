@@ -13,7 +13,9 @@ telnet
 mariadb(mysql)
 
 yum -y install nfs-utils htop iftop tmux unzip zip epel-release telnet mariadb
+# make data1 folder
 mkdir -p /root/data1
+# append below line into /etc/fstab
 NAS_SERVER_PATH:/ /root/data1     nfs4    _netdev,auto    0       0
 # wget and install docker-ce
 https://github.com/huangsen365/install_docker
