@@ -48,6 +48,7 @@ php-xmlrpc \
 redis \
 rsync \
 subversion \
+sudo \
 telnet \
 tmux \
 unar \
