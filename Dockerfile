@@ -58,6 +58,8 @@ wget \
 zip \
 zlib-devel
 
+COPY vimrc_append_conf.txt /tmp
+RUN cat /tmp/vimrc_append_conf.txt >> /etc/vimrc
 
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
 RUN yum -y install rh-php71-php*
