@@ -8,6 +8,8 @@ RUN yum -y install man-pages man-db man
 
 RUN echo "export HISTSIZE=20000" >> /etc/bashrc
 RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
+RUN echo "export VISUAL=\"vim\"" >> /etc/bashrc
+RUN echo "export EDITOR=\"vim\"" >> /etc/bashrc
 
 
 RUN rm -rf /etc/localtime
