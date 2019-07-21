@@ -2,6 +2,7 @@
 
 $git_pull_command = "sh /var/www/" . $_SERVER['SERVER_NAME'] . "/gitpull.sh";
 print $git_pull_command;
+exec("git config --get remote.origin.url", $output);
 exec($git_pull_command, $output);
 echo '<pre>';
 print_r($output);
