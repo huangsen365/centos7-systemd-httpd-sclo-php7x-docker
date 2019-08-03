@@ -27,6 +27,7 @@ iftop \
 logrotate \
 mariadb-server \
 mod_ssl \
+mtr \
 mysql \
 nginx \
 openssh-clients \
