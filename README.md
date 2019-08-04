@@ -25,6 +25,8 @@ https://github.com/huangsen365/install_docker
 wget https://github.com/huangsen365/install_docker/archive/master.zip -O /root/data1/install_docker.zip
 
 unzip /root/data1/install_docker.zip -d /root/data1/
+
+cd /root/data1/install_docker-master
 # wget
 wget https://github.com/huangsen365/centos7-systemd-httpd-sclo-php7x-docker/archive/master.zip -O /root/data1/centos7-systemd-httpd-sclo-php7x-docker.zip
 # enter scripts folder
