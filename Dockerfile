@@ -72,11 +72,11 @@ RUN yum -y install sclo-php71-php* --exclude=sclo-php71-php-pecl-redis --exclude
 
 RUN useradd sshuser
 RUN usermod -aG apache sshuser
-RUN mv /etc/opt/rh/rh-php71/php-fpm.d/www.conf /etc/opt/rh/rh-php71/php-fpm.d/www.conf.bak
-COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9000_www.yourdomain.com.conf.bak
-COPY php-fpm_9000_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9000_www.yourdomain.com.conf
-COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdomain.com.conf.bak
-COPY httpd_9000_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9000_www.yourdomain.com.conf
+#RUN mv /etc/opt/rh/rh-php71/php-fpm.d/www.conf /etc/opt/rh/rh-php71/php-fpm.d/www.conf.bak
+COPY php-fpm_9001_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9001_www.yourdomain.com.conf.bak
+COPY php-fpm_9001_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9001_www.yourdomain.com.conf
+COPY httpd_9001_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9001_www.yourdomain.com.conf.bak
+COPY httpd_9001_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9001_www.yourdomain.com.conf
 
 
 
