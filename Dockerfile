@@ -2,7 +2,7 @@ FROM centos/systemd
 
 MAINTAINER "Your Name" <you@example.com>
 
-RUN sed -i 's/tsflags/\#tsflags/g' /etc/yum.conf
+RUN sed -i 's/tsflags=nodocs/\#tsflags=nodocs/g' /etc/yum.conf
 RUN echo "ip_resolve=4" >> /etc/yum.conf
 RUN yum -y install man-pages man-db man
 
