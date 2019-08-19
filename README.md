@@ -30,6 +30,16 @@ cd /root/data1/install_docker-master
 
 # wget
 wget https://github.com/huangsen365/centos7-systemd-httpd-sclo-php7x-docker/archive/master.zip -O /root/data1/centos7-systemd-httpd-sclo-php7x-docker.zip
+
+cd /root/data1
+
+unzip centos7-systemd-httpd-sclo-php7x-docker.zip
+
+cd centos7-systemd-httpd-sclo-php7x-docker-master
+
+cat docker_build.sh
+
+
 # enter scripts folder
 cd /root/data1/centos7-systemd-httpd-sclo-php7x-docker-master/yourdomain.com
 # run the docker instance
