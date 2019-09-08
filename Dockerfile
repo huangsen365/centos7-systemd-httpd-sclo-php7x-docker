@@ -6,7 +6,7 @@ RUN sed -i 's/tsflags=nodocs/\#tsflags=nodocs/g' /etc/yum.conf
 RUN echo "ip_resolve=4" >> /etc/yum.conf
 RUN yum -y install man-pages man-db man
 
-RUN echo "export HISTSIZE=20000000" >> /etc/bashrc
+RUN echo "export HISTSIZE=999999999" >> /etc/bashrc
 RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
 RUN echo "export VISUAL=\"vim\"" >> /etc/bashrc
 RUN echo "export EDITOR=\"vim\"" >> /etc/bashrc
