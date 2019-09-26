@@ -12,7 +12,7 @@ epel-release
 telnet
 mariadb(mysql)
 
-yum -y install wget nfs-utils htop iftop tmux unzip zip epel-release telnet mariadb mtr git
+yum -y install epel-release && yum -y install wget nfs-utils htop iftop tmux unzip zip telnet mariadb mtr git
 # make data1 folder
 mkdir -p /root/data1
 # append below line into /etc/fstab
