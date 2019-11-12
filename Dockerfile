@@ -12,7 +12,6 @@ RUN echo "export HISTTIMEFORMAT=\"%F %T \"" >> /etc/bashrc
 RUN echo "export VISUAL=\"vim\"" >> /etc/bashrc
 RUN echo "export EDITOR=\"vim\"" >> /etc/bashrc
 
-
 RUN rm -rf /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
@@ -65,11 +64,9 @@ zlib-devel
 COPY vimrc_append_conf.txt /tmp
 RUN cat /tmp/vimrc_append_conf.txt >> /etc/vimrc
 
-RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm
-RUN yum -y install rh-php71-php*
-RUN yum -y install sclo-php71-php* --exclude=sclo-php71-php-pecl-redis --exclude=sclo-php71-php-smbclient --exclude=sclo-php71-php-pecl-redis4*
-
-
+RUN yum -y install rh-php70 rh-php70-php rh-php70-php-fpm rh-php70-php* sclo-php70-php* --exclude=sclo-php70-php-pecl-redis --exclude=sclo-php70-php-smbclient --exclude=sclo-php70-php-pecl-redis4*
+RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm rh-php71-php* sclo-php71-php* --exclude=sclo-php71-php-pecl-redis --exclude=sclo-php71-php-smbclient --exclude=sclo-php71-php-pecl-redis4*
+RUN yum -y install rh-php72 rh-php72-php rh-php72-php-fpm rh-php72-php* sclo-php72-php* --exclude=sclo-php72-php-pecl-redis --exclude=sclo-php72-php-smbclient --exclude=sclo-php72-php-pecl-redis4*
 
 RUN useradd sshuser
 RUN usermod -aG apache sshuser
@@ -78,8 +75,6 @@ COPY php-fpm_9001_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm
 COPY php-fpm_9001_www.yourdomain.com.conf /etc/opt/rh/rh-php71/php-fpm.d/php-fpm_9001_www.yourdomain.com.conf
 COPY httpd_9001_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9001_www.yourdomain.com.conf.bak
 COPY httpd_9001_www.yourdomain.com.conf /etc/httpd/conf.d/httpd_9001_www.yourdomain.com.conf
-
-
 
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 COPY mkdir.sh /tmp/mkdir.sh
