@@ -1,2 +1,2 @@
-# Please add 'gitpull.php' into the .gitignore file
+# Please add 'gitpull.sh' into the .gitignore file
 git pull
