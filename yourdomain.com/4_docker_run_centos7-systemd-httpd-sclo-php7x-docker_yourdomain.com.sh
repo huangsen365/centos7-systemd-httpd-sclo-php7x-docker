@@ -5,7 +5,6 @@ docker run -d \
   -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
   -v $current_dir/volumes/volume_yourdomain.com/etc/httpd:/etc/httpd \
   -v $current_dir/volumes/volume_yourdomain.com/etc/nginx:/etc/nginx \
-  #-v $current_dir/volumes/volume_yourdomain.com/etc/opt/rh/rh-php71:/etc/opt/rh/rh-php71 \
   -v $current_dir/volumes/volume_yourdomain.com/etc/opt:/etc/opt \
   -v $current_dir/volumes/volume_yourdomain.com/etc/php-fpm.d:/etc/php-fpm.d \
   -v $current_dir/volumes/volume_yourdomain.com/home:/home \
