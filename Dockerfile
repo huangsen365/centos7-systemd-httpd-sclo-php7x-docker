@@ -66,7 +66,7 @@ RUN cat /tmp/vimrc_append_conf.txt >> /etc/vimrc
 
 RUN yum -y install rh-php70 rh-php70-php rh-php70-php-fpm rh-php70-php* sclo-php70-php* --exclude=sclo-php70-php-pecl-redis --exclude=sclo-php70-php-smbclient --exclude=sclo-php70-php-pecl-redis4*
 RUN yum -y install rh-php71 rh-php71-php rh-php71-php-fpm rh-php71-php* sclo-php71-php* --exclude=sclo-php71-php-pecl-redis --exclude=sclo-php71-php-smbclient --exclude=sclo-php71-php-pecl-redis4*
-RUN yum -y install rh-php72 rh-php72-php rh-php72-php-fpm rh-php72-php* sclo-php72-php* --exclude=sclo-php72-php-pecl-redis --exclude=sclo-php72-php-smbclient --exclude=sclo-php72-php-pecl-redis4*
+#RUN yum -y install rh-php72 rh-php72-php rh-php72-php-fpm rh-php72-php* sclo-php72-php* --exclude=sclo-php72-php-pecl-redis --exclude=sclo-php72-php-smbclient --exclude=sclo-php72-php-pecl-redis4*
 
 RUN useradd sshuser
 RUN usermod -aG apache sshuser
