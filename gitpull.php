@@ -1,6 +1,7 @@
 <p>
 <?php
 
+/* Please add this into the .gitignore file */
 $git_pull_command = "sh /var/www/" . $_SERVER['SERVER_NAME'] . "/gitpull.sh";
 print $git_pull_command;
 exec("git config --get remote.origin.url", $output);
