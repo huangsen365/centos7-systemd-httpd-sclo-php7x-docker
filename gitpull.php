@@ -2,6 +2,7 @@
 <?php
 
 /* Please add 'gitpull.php' into the .gitignore file */
+# wget https://github.com/huangsen365/centos7-systemd-httpd-sclo-php7x-docker/raw/master/gitpull.php -O gitpull.php
 $git_pull_command = "sh /var/www/" . $_SERVER['SERVER_NAME'] . "/gitpull.sh";
 print $git_pull_command;
 exec("git config --get remote.origin.url", $output);
