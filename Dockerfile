@@ -89,6 +89,9 @@ RUN systemctl enable httpd.service; systemctl enable rh-php71-php-fpm; systemctl
 #RUN yum clean all
 
 #RUN /bin/sh /root/mkdir_chown_chmod.sh
+RUN rpm -v --import https://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+RUN rpm -Uvh https://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+RUN yum install -y ffmpeg ffmpeg-devel
 
 EXPOSE 80 443
 
