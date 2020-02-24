@@ -16,7 +16,10 @@ yum -y install epel-release && yum -y install wget nfs-utils htop iftop tmux unz
 # make data1 folder
 mkdir -p /root/data1
 # append below line into /etc/fstab
-NAS_SERVER_PATH:/ /root/data1     nfs4    _netdev,noresvport,auto    0       0
+# NAS_SERVER_PATH:/ /root/data1     nfs4    _netdev,noresvport,auto    0       0
+
+NAS_SERVER_PATH:/ /root/data1     nfs4    vers=4,minorversion=0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport    0       0
+
 # mount it
 mount -a
 # wget and install docker-ce
