@@ -23,6 +23,7 @@ NAS_SERVER_PATH:/ /root/data1 nfs4 vers=4,minorversion=0,rsize=1048576,wsize=104
 # https://help.aliyun.com/document_detail/91476.html
 
 file-system-id.region.nas.aliyuncs.com:/ /mnt nfs      vers=4,minorversion=0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+
 NAS_SERVER_PATH:/ /root/data1 nfs      vers=4,minorversion=0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 
 # mount it
